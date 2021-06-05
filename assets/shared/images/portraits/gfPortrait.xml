@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="gfPortrait.png">
+	<!-- Created with Adobe Animate version 20.0.0.17400 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Girlfriend Portrait Enter instance 10000" x="2502" y="170" width="289" height="273"/>
+	<SubTexture name="Girlfriend Portrait Enter instance 10001" x="907" y="170" width="289" height="273"/>
+	<SubTexture name="Girlfriend Portrait Enter instance 10002" x="907" y="170" width="289" height="273"/>
+	<SubTexture name="Girlfriend Portrait Enter instance 10003" x="2444" y="1100" width="289" height="273"/>
+	<SubTexture name="Girlfriend Portrait Enter instance 10004" x="2444" y="1100" width="289" height="273"/>
+	<SubTexture name="Girlfriend Portrait Enter instance 10005" x="905" y="1100" width="289" height="273"/>
+	<SubTexture name="Girlfriend Portrait Enter instance 10006" x="905" y="1100" width="289" height="273"/>
+	<SubTexture name="Girlfriend Portrait Enter instance 10007" x="905" y="1100" width="289" height="273"/>
+	<SubTexture name="Girlfriend Portrait Enter instance 10008" x="905" y="1100" width="289" height="273"/>
+</TextureAtlas>
