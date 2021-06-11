@@ -24,22 +24,22 @@ class StoryMenuState extends MusicBeatState
 	var scoreText:FlxText;
 
 	var weekData:Array<Dynamic> = [
-		['Tutorial'],
 		['Vibing', 'Tempation', 'Control']
 	];
 	var curDifficulty:Int = 1;
 
-	public static var weekUnlocked:Array<Bool> = [true, true, true, true, true, true, true];
+	public static var weekUnlocked:Array<Bool> = [true, false];
+	// Keeping it at false in case I wanna do like a Week 2 or something
+	// "Please, not again..."
 
 	var weekCharacters:Array<Dynamic> = [
-		['', 'bf', 'gf'],
 		['dad', 'bf', 'gf']
 	];
 
 	var weekNames:Array<String> = [
-		"How to Funk",
 		"Rooftop Hyjinx"
 	];
+	// "More like Rooftop Hell."
 
 	var txtWeekTitle:FlxText;
 

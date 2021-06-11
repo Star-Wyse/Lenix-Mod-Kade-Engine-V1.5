@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="lenixMadPortrait.png">
+	<!-- Created with Adobe Animate version 20.0.0.17400 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Mad Portrait Enter instance 10000" x="311" y="5" width="263" height="440"/>
+	<SubTexture name="Mad Portrait Enter instance 10001" x="1902" y="5" width="263" height="440"/>
+	<SubTexture name="Mad Portrait Enter instance 10002" x="1902" y="5" width="263" height="440"/>
+	<SubTexture name="Mad Portrait Enter instance 10003" x="380" y="931" width="263" height="440"/>
+	<SubTexture name="Mad Portrait Enter instance 10004" x="380" y="931" width="263" height="440"/>
+	<SubTexture name="Mad Portrait Enter instance 10005" x="1944" y="931" width="263" height="440"/>
+	<SubTexture name="Mad Portrait Enter instance 10006" x="1944" y="931" width="263" height="440"/>
+	<SubTexture name="Mad Portrait Enter instance 10007" x="1944" y="931" width="263" height="440"/>
+	<SubTexture name="Mad Portrait Enter instance 10008" x="1944" y="931" width="263" height="440"/>
+</TextureAtlas>

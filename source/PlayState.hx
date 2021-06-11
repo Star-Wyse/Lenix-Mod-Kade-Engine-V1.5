@@ -318,31 +318,39 @@ class PlayState extends MusicBeatState
 		{
 			case 'tutorial':
 				dialogue = ["Hey you're pretty cute.", 'Use the arrow keys to keep up \nwith me singing.'];
+				// "So that's how they met? Always that it was a bit more... "romantic", is all."
 			case 'bopeebo':
 				dialogue = [
 					'HEY!',
 					"You think you can just sing\nwith my daughter like that?",
 					"If you want to date her...",
 					"You're going to have to go \nthrough ME first!"
+				// "Sheesh, I always knew the old man didn't want his daughter being with anyone, but this is a bit extreme."
 				];
 			case 'fresh':
 				dialogue = ["Not too shabby boy.", ""];
+				// "Huh. That's all he really had to say after getting his butt kicked."
 			case 'dad battle':
 				dialogue = [
 					"gah you think you're hot stuff?",
 					"If you can beat me here...",
 					"Only then I will even CONSIDER letting you\ndate my daughter!"
+				// "And to this day, he still doesn't."
 				];
 			case 'senpai':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('senpai/senpaiDialogue'));
+				// "Hmm. So the dialogue is kept somewhere else... I'll have to search in a bit."
 			case 'roses':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('roses/rosesDialogue'));
 			case 'thorns':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('thorns/thornsDialogue'));
 			case 'vibing':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('vibing/dialogue'));
+				// "Man, I've just about had it with saying the same thing over and over again. I wish I wasn't trapped in this game."
 			case 'temptation':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('temptation/dialogue'));
+				// "Maybe I can change my dialogue to refuse. I wonder what happens."
+				// "Okay, so it tries to get me on track, but it just crashes the game. Maybe if I go to the Dialogue coding, I can add a new part where I pretend I'm going normal."
 			}
 
 		switch(SONG.stage)
@@ -960,6 +968,8 @@ class PlayState extends MusicBeatState
 				ground.active = false;
 				add(ground);
 
+				if(FlxG.save.data.distractions)
+				{
 				// trailArea.scrollFactor.set();
 				// You maybe thinking: Why is it over here? It's because it originally was placed behind the whole Space area, so all you could see the trail was where the holes were.
 				var evilTrail = new FlxTrail(dad, null, 3, 24, 0.3, 0.169);
@@ -967,6 +977,7 @@ class PlayState extends MusicBeatState
 				// evilTrail.changeGraphic()
 				add(evilTrail);
 				// evilTrail.scrollFactor.set(1.1, 1.1);
+				}
 			}
 
 		add(dad);

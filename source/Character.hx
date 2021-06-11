@@ -62,38 +62,38 @@ class Character extends FlxSprite
 
 				playAnim('danceRight');
 
-				case 'gf-scared':
-					// I'm very stupid in coding so I'm just going to make a scared GF in this way
-					tex = Paths.getSparrowAtlas('characters/GF_assets');
-					frames = tex;
-					animation.addByPrefix('cheer', 'GF Cheer', 24, false);
-					animation.addByPrefix('singLEFT', 'GF left note', 24, false);
-					animation.addByPrefix('singRIGHT', 'GF Right Note', 24, false);
-					animation.addByPrefix('singUP', 'GF Up Note', 24, false);
-					animation.addByPrefix('singDOWN', 'GF Down Note', 24, false);
-					animation.addByIndices('sad', 'gf sad', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "", 24, false);
-					animation.addByPrefix('danceLeft', 'GF FEAR', 24, true);
-					animation.addByPrefix('danceRight', 'GF FEAR', 24, true);
-					animation.addByIndices('hairBlow', "GF Dancing Beat Hair blowing", [0, 1, 2, 3], "", 24);
-					animation.addByIndices('hairFall', "GF Dancing Beat Hair Landing", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "", 24, false);
-					animation.addByPrefix('scared', 'GF FEAR', 24);
-	
-					addOffset('cheer');
-					addOffset('sad', -2, -2);
-					addOffset('danceLeft', 0, -9);
-					addOffset('danceRight', 0, -9);
-	
-					addOffset("singUP", 0, 4);
-					addOffset("singRIGHT", 0, -20);
-					addOffset("singLEFT", 0, -19);
-					addOffset("singDOWN", 0, -20);
-					addOffset('hairBlow', 45, -8);
-					addOffset('hairFall', 0, -9);
-	
-					addOffset('scared', -2, -17);
-	
-					playAnim('danceRight');
-	
+			case 'gf-scared':
+				// I'm very stupid in coding so I'm just going to make a scared GF in this way
+				tex = Paths.getSparrowAtlas('characters/GF_assets');
+				frames = tex;
+				animation.addByPrefix('cheer', 'GF Cheer', 24, false);
+				animation.addByPrefix('singLEFT', 'GF left note', 24, false);
+				animation.addByPrefix('singRIGHT', 'GF Right Note', 24, false);
+				animation.addByPrefix('singUP', 'GF Up Note', 24, false);
+				animation.addByPrefix('singDOWN', 'GF Down Note', 24, false);
+				animation.addByIndices('sad', 'gf sad', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "", 24, false);
+				animation.addByPrefix('danceLeft', 'GF FEAR', 24, false);
+				animation.addByPrefix('danceRight', 'GF FEAR', 24, false);
+				animation.addByIndices('hairBlow', "GF Dancing Beat Hair blowing", [0, 1, 2, 3], "", 24);
+				animation.addByIndices('hairFall', "GF Dancing Beat Hair Landing", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "", 24, false);
+				animation.addByPrefix('scared', 'GF FEAR', 24);
+
+				addOffset('cheer');
+				addOffset('sad', -2, -2);
+				addOffset('danceLeft', 0, -9);
+				addOffset('danceRight', 0, -9);
+
+				addOffset("singUP", 0, 4);
+				addOffset("singRIGHT", 0, -20);
+				addOffset("singLEFT", 0, -19);
+				addOffset("singDOWN", 0, -20);
+				addOffset('hairBlow', 45, -8);
+				addOffset('hairFall', 0, -9);
+
+				addOffset('scared', -2, -17);
+
+				playAnim('danceRight');
+
 			case 'gf-christmas':
 				tex = Paths.getSparrowAtlas('characters/gfChristmas');
 				frames = tex;
@@ -172,28 +172,46 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 
-				case 'lenix':
-					// LENIX ANIMATION LOADING CODE
-					tex = Paths.getSparrowAtlas('characters/Lenix_Assets');
-					frames = tex;
-					animation.addByPrefix('idle', 'Lenix idle dance', 24);
-					animation.addByPrefix('singUP', 'Lenix Sing Note UP', 24);
-					animation.addByPrefix('singRIGHT', 'Lenix Sing Note RIGHT', 24);
-					animation.addByPrefix('singDOWN', 'Lenix Sing Note DOWN', 24);
-					animation.addByPrefix('singLEFT', 'Lenix Sing Note LEFT', 24);
-	
-					animation.addByPrefix('glitchy', 'Lenix glitch idle', 24, true);
-								
-					addOffset('idle');
-					addOffset("singUP", 0, 0);
-					addOffset("singRIGHT", 0, 0);
-					addOffset("singLEFT", 0, 0);
-					addOffset("singDOWN", 0, -30);
-				
-					addOffset("glitchy", 0, 0);
-	
-					playAnim('idle');
+			case 'lenix':
+				// LENIX ANIMATION LOADING CODE
+				tex = Paths.getSparrowAtlas('characters/Lenix_Assets');
+				frames = tex;
+				animation.addByPrefix('idle', 'Lenix idle dance', 24, false);
+				animation.addByPrefix('singUP', 'Lenix Sing Note UP', 24);
+				animation.addByPrefix('singRIGHT', 'Lenix Sing Note RIGHT', 24);
+				animation.addByPrefix('singDOWN', 'Lenix Sing Note DOWN', 24);
+				animation.addByPrefix('singLEFT', 'Lenix Sing Note LEFT', 24);
+
+				animation.addByPrefix('glitchy', 'Lenix glitch idle', 24, true);
+							
+				addOffset('idle', 0, 6);
+				addOffset("singUP", -13, 30);
+				addOffset("singRIGHT", 0, -9);
+				addOffset("singLEFT", 103, 31);
+				addOffset("singDOWN", 0, 13);
+			
+				addOffset("glitchy", 0, 0);
+
+				playAnim('idle');
 					
+			case 'lenix-mad':
+				// LENIX but mad ANIMATION LOADING CODE
+				tex = Paths.getSparrowAtlas('characters/LenixMad_Assets');
+				frames = tex;
+				animation.addByPrefix('idle', 'mad idle dance', 24, false);
+				animation.addByPrefix('singUP', 'mad Sing Note UP', 24);
+				animation.addByPrefix('singRIGHT', 'mad Sing Note RIGHT', 24);
+				animation.addByPrefix('singDOWN', 'mad Sing Note DOWN', 24);
+				animation.addByPrefix('singLEFT', 'mad Sing Note LEFT', 24);
+
+				addOffset('idle', 0, 6);
+				addOffset("singUP", -13, 30);
+				addOffset("singRIGHT", 0, -9);
+				addOffset("singLEFT", 103, 31);
+				addOffset("singDOWN", 0, 13);
+				
+				playAnim('idle');
+
 			case 'spooky':
 				tex = Paths.getSparrowAtlas('characters/spooky_kids_assets');
 				frames = tex;
@@ -360,6 +378,40 @@ class Character extends FlxSprite
 
 				flipX = true;
 
+			case 'bf-null':
+				var tex = Paths.getSparrowAtlas('characters/BoyFriend_Null_Assets');
+				frames = tex;
+				animation.addByPrefix('idle', 'BF idle dance', 24, false);
+				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
+				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
+				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
+				animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
+				animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
+
+				animation.addByPrefix('firstDeath', "BF dies", 24, false);
+				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
+				animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
+
+				addOffset('idle', -5);
+				addOffset("singUP", -29, 27);
+				addOffset("singRIGHT", -38, -7);
+				addOffset("singLEFT", 12, -6);
+				addOffset("singDOWN", -10, -50);
+				addOffset("singUPmiss", -29, 27);
+				addOffset("singRIGHTmiss", -30, 21);
+				addOffset("singLEFTmiss", 12, 24);
+				addOffset("singDOWNmiss", -11, -19);
+				addOffset('firstDeath', 37, 11);
+				addOffset('deathLoop', 37, 5);
+				addOffset('deathConfirm', 37, 69);
+
+				playAnim('idle');
+
+				flipX = true;
+	
 			case 'bf-christmas':
 				var tex = Paths.getSparrowAtlas('characters/bfChristmas');
 				frames = tex;

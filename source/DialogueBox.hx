@@ -32,7 +32,11 @@ class DialogueBox extends FlxSpriteGroup
 	var portraitLeft:FlxSprite;
 	var portraitRight:FlxSprite;
 	var portraitGf:FlxSprite;
+	// "Alright, so if I try to refuse the code normally, the entire thing just ends. Maybe if I try to give myself a glitch effect, the world will stay."
 	var lenixGlitch:FlxSprite;
+	// "Mission accomplished! Even if it forces me to follow it, this should do for now."
+	// "Man, this is pissing me off! Maybe I can add my own feelings in here. Shouldn't do too much harm."
+	var portraitMad:FlxSprite;
 
 	//I have no idea what I'm doing, but I hope this works
 	var glitchSound:FlxSound;
@@ -61,6 +65,9 @@ class DialogueBox extends FlxSpriteGroup
 		bgFade.scrollFactor.set();
 		bgFade.alpha = 0;
 		add(bgFade);
+
+		glitchSound = FlxG.sound.load(Paths.sound('lenixGlitch_Sound'));
+		glitchSound.looped = true;
 
 		new FlxTimer().start(0.83, function(tmr:FlxTimer)
 		{
@@ -100,6 +107,7 @@ class DialogueBox extends FlxSpriteGroup
 				hasDialog = true;
 				box.frames = Paths.getSparrowAtlas('speech_bubble_talking', 'shared');
 				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
+				box.animation.addByPrefix('loud', 'AHH speech bubble', 24, false);
 				box.animation.addByIndices('normal', 'speech bubble normal', [4], "", 24);
 				box.width = 200;
 				box.height = 200;
@@ -147,7 +155,7 @@ class DialogueBox extends FlxSpriteGroup
 				add(portraitRight);
 				portraitRight.visible = false;
 		
-		case 'vibing':
+			case 'vibing':
 				portraitRight = new FlxSprite(640, 175);
 				portraitRight.frames = Paths.getSparrowAtlas('portraits/boyfriendPortrait', 'shared');
 				portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter instance 1', 24, false);
@@ -167,13 +175,9 @@ class DialogueBox extends FlxSpriteGroup
 			portraitGf.scrollFactor.set();
 			add(portraitGf);
 			portraitGf.visible = false;
-
 		}
 
-		{
-			glitchSound = FlxG.sound.load(Paths.sound('lenixGlitch_Sound'));
-			glitchSound.looped = true;
-			
+		{		
 			lenixGlitch = new FlxSprite(240, 25);
 			lenixGlitch.frames = Paths.getSparrowAtlas('portraits/lenixGlitchPortrait', 'shared');
 			lenixGlitch.animation.addByPrefix('enter', 'Glitch Portrait Enter instance 1', 24, true);
@@ -184,6 +188,19 @@ class DialogueBox extends FlxSpriteGroup
 			lenixGlitch.scrollFactor.set();
 			add(lenixGlitch);
 			lenixGlitch.visible = false;
+		}
+
+		{
+			portraitMad = new FlxSprite(740, 170);
+			portraitMad.frames = Paths.getSparrowAtlas('portraits/lenixMadPortrait', 'shared');
+			portraitMad.animation.addByPrefix('enter', 'Mad Portrait Enter instance 1', 24, false);
+			portraitMad.setGraphicSize(Std.int(portraitMad.width * PlayState.daPixelZoom * 0.185));
+			portraitMad.x = portraitLeft.x;
+			portraitMad.y = portraitLeft.y;
+			portraitMad.updateHitbox();
+			portraitMad.scrollFactor.set();
+			add(portraitMad);
+			portraitMad.visible = false;
 		}
 		box.animation.play('normalOpen');
 		box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9));
@@ -279,6 +296,7 @@ class DialogueBox extends FlxSpriteGroup
 						portraitRight.visible = false;
 						portraitGf.visible = false;
 						lenixGlitch.visible = false;
+						portraitMad.visible = false;
 						swagDialogue.alpha -= 1 / 5;
 						dropText.alpha = swagDialogue.alpha;
 					}, 5);
@@ -317,98 +335,69 @@ class DialogueBox extends FlxSpriteGroup
 		{
 			case 'dad':
 				portraitRight.visible = false;
-				if (!portraitLeft.visible)
-				{
-					portraitLeft.visible = true;
-					portraitLeft.animation.play('enter');
-					glitchSound.stop();
-				}
 				portraitGf.visible = false;
-				if (!portraitLeft.visible)
-				{
-					portraitLeft.visible = true;
-					portraitLeft.animation.play('enter');
-					glitchSound.stop();
-				}
-
 				lenixGlitch.visible = false;
+				portraitMad.visible = false;
+				glitchSound.stop();
+				box.animation.play('normal');
+				box.y = 400;
 				if (!portraitLeft.visible)
 				{
 					portraitLeft.visible = true;
 					portraitLeft.animation.play('enter');
-					glitchSound.stop();
 				}
-			case 'bf':
+				case 'bf':
 				portraitLeft.visible = false;
-				if (!portraitRight.visible)
-				{
-					portraitRight.visible = true;
-					portraitRight.animation.play('enter');
-					glitchSound.stop();
-				}
-
 				portraitGf.visible = false;
-				if (!portraitRight.visible)
-				{
-					portraitRight.visible = true;
-					portraitRight.animation.play('enter');
-					glitchSound.stop();
-				}
-
 				lenixGlitch.visible = false;
+				portraitMad.visible = false;
+				glitchSound.stop();
+				box.animation.play('normal');
+				box.y = 400;
 				if (!portraitRight.visible)
 				{
 					portraitRight.visible = true;
 					portraitRight.animation.play('enter');
-					glitchSound.stop();
 				}
-			case 'gf':
+				case 'gf':
 				portraitLeft.visible = false;
-				if (!portraitGf.visible)
-				{
-					portraitGf.visible = true;
-					portraitGf.animation.play('enter');
-					glitchSound.stop();
-				}
-
 				portraitRight.visible = false;
-				if (!portraitGf.visible)
-				{
-					portraitGf.visible = true;
-					portraitGf.animation.play('enter');
-					glitchSound.stop();
-				}
-				
 				lenixGlitch.visible = false;
+				portraitMad.visible = false;
+				glitchSound.stop();
+				box.animation.play('normal');
+				box.y = 400;
 				if (!portraitGf.visible)
 				{
 					portraitGf.visible = true;
 					portraitGf.animation.play('enter');
-					glitchSound.stop();
 				}
 				case 'lenixGlitch':
-					portraitRight.visible = false;
-					if (!lenixGlitch.visible)
-					{
-						lenixGlitch.visible = true;
-						lenixGlitch.animation.play('enter');
-						glitchSound.play();
-					}
-					portraitGf.visible = false;
-					if (!lenixGlitch.visible)
-					{
-						lenixGlitch.visible = true;
-						lenixGlitch.animation.play('enter');
-						glitchSound.play();
-					}
-
-					portraitLeft.visible = false;
-					if (!lenixGlitch.visible)
-					{
-						lenixGlitch.visible = true;
-						lenixGlitch.animation.play('enter');
-						glitchSound.play();
-					}
+				portraitRight.visible = false;
+				portraitGf.visible = false;
+				portraitLeft.visible = false;
+				portraitMad.visible = false;
+				glitchSound.play();
+				box.animation.play('normal');
+				box.y = 400;
+				if (!lenixGlitch.visible)
+				{
+					lenixGlitch.visible = true;
+					lenixGlitch.animation.play('enter');
+				}
+				case 'lenixMad':
+				portraitRight.visible = false;
+				portraitGf.visible = false;
+				portraitLeft.visible = false;
+				lenixGlitch.visible = false;
+				glitchSound.stop();
+				box.animation.play('loud');
+				box.y = 350;
+				if (!portraitMad.visible)
+				{
+					portraitMad.visible = true;
+					portraitMad.animation.play('enter');
+				}		
 		}
 	}
 
