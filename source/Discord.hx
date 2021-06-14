@@ -4,6 +4,8 @@ package;
 import Sys.sleep;
 import discord_rpc.DiscordRpc;
 
+//*Discord Ping*
+
 using StringTools;
 
 class DiscordClient
