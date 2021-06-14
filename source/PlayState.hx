@@ -968,7 +968,7 @@ class PlayState extends MusicBeatState
 				ground.active = false;
 				add(ground);
 
-				if(FlxG.save.data.distractions)
+				if(FlxG.save.data.flashing)
 				{
 				// trailArea.scrollFactor.set();
 				// You maybe thinking: Why is it over here? It's because it originally was placed behind the whole Space area, so all you could see the trail was where the holes were.
